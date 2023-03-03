@@ -1,0 +1,42 @@
+{
+	"manifest_version": 3,
+	"name": "Full screen name",
+	"description": "",
+	"version": "0.0.1",
+	"author": "Volodymyr Pyshnyi",
+	"devtools_page": "index.html",
+	"omnibox": {
+		"keyword": "Full screen keyword"
+	},
+	"action": {
+		"default_title": "Click for full screen",
+		"default_popup": "index.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"index.js"
+			]
+		}
+	],
+	"background": {
+		"service_worke": {
+			"persistent": true,
+			"scripts": [
+				"background.js"
+			]
+		}
+	},
+	"permissions": [
+		"background",
+		"tabs",
+		"activeTab",
+		"tabGroups",
+		"declarativeContent",
+		"storage",
+		"scripting"
+	]
+}
